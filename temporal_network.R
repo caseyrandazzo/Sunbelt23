@@ -76,7 +76,7 @@ compute.animation(
 
 # Render the animation and open it in a web browser
 #See https://kateto.net/wp-content/uploads/2016/04/Sunbelt%202016%20R%20Network%20Visualization%20Workshop.R
-#for expanding rendering categories to visualize other typoes of edges/attributes
+#for visualizing other types of edges/attributes
 render.d3movie(
   dynamicTH,
   displaylabels = FALSE,
