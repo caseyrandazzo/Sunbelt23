@@ -1,0 +1,19 @@
+#Used this code to collect transcripts from town website 
+
+library(RSelenium)
+​
+rD <- rsDriver(browser="firefox", port=4545L, verbose=T)
+remDr <- rD[["client"]]
+​
+​
+remDr$navigate("https://www.somervillenj.org/content/4060/4455/default.aspx")
+sbox<- remDr$findElement(using = "xpath", value = "//select[@id='FB_F_4980']/option[@value='4986']")
+sbox$clickElement()
+​
+sbox2<- remDr$findElement(using = "xpath", value = "//select[@id='FB_F_4986']/option[@value='12221']")
+sbox2$clickElement()
+​
+links <- remDr$getPageSource()[[1]] %>% 
+  read_html() %>% html_nodes(xpath="//a[contains(@href,'.pdf')]")
+​
+html_attr(links,"href")
